@@ -68,3 +68,8 @@ h1 {
     margin-right: 10px;
     vertical-align: middle;
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
