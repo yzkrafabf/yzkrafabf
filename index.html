@@ -14,90 +14,82 @@
             margin: 10px 0; /* Espacio entre los elementos */
             border-radius: 15px; /* Bordes redondeados */
             overflow: hidden; /* Para evitar que el texto sobresalga */
-            transition: transform 0.3s; /* Transición para el efecto hover */
-        }
-        .social-links li:hover {
-            transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
-        }
-        .social-links a {
-            display: flex; /* Hace que el enlace ocupe todo el espacio del li */
-            align-items: center; /* Centra verticalmente los elementos */
-            padding: 15px; /* Espacio interno del enlace */
-            text-decoration: none; /* Quita el subrayado del enlace */
-            color: #fff; /* Color del texto */
             text-align: center; /* Centra el texto */
         }
-        /* Colores para cada red social */
-        .gmail { background-color: #D44638; }
-        .youtube { background-color: #FF0000; }
-        .facebook { background-color: #3B5998; }
-        .whatsapp { background-color: #25D366; }
-        .x { background-color: #1DA1F2; }
-        .instagram { background-color: #C13584; }
-        .tiktok { background-color: #010101; }
-        .telegram { background-color: #0088CC; }
-        .threads { background-color: #000000; }
-        .snapchat { background-color: #FFFC00; color: #000; } /* Texto negro para mejor legibilidad */
-        .discord { background-color: #7289DA; }
-        .reddit { background-color: #FF4500; }
-        .linkedin { background-color: #0077B5; }
-        .github { background-color: #333; }
-
+        .social-links a {
+            display: block; /* Hace que el enlace ocupe todo el espacio del li */
+            padding: 15px; /* Espacio interno del enlace */
+            text-decoration: none; /* Quita el subrayado del enlace */
+            color: #000; /* Color del texto */
+            background-color: #fff; /* Fondo blanco */
+            transition: background-color 0.3s; /* Transición para el efecto hover */
+        }
+        .social-links a:hover {
+            background-color: #f0f0f0; /* Fondo gris claro al pasar el ratón */
+        }
         .button {
-            padding: 10px 15px; /* Espacio interno del botón */
+            display: inline-block; /* Alineación del botón */
+            padding: 10px 20px; /* Espaciado interno del botón */
             border: none; /* Sin borde */
-            border-radius: 10px; /* Bordes redondeados */
-            color: #fff; /* Color del texto */
+            border-radius: 5px; /* Bordes redondeados del botón */
+            color: #000; /* Color del texto */
+            background-color: #4CAF50; /* Color de fondo verde */
             cursor: pointer; /* Cambia el cursor al pasar el ratón */
-            margin: 5px 0; /* Espacio entre botones */
-            display: inline-block; /* Para mantener el tamaño */
+            text-align: center; /* Centra el texto del botón */
+            margin-top: 10px; /* Espacio superior del botón */
         }
-        .button-green {
-            background-color: #28a745; /* Color verde */
+        .spotify-button {
+            background-color: #1DB954; /* Color de fondo para el botón de Spotify */
         }
-        .button-blue {
-            background-color: #17a2b8; /* Color azul turquesa */
+        .spotify-button:hover {
+            background-color: #17B64D; /* Color más oscuro al pasar el ratón */
         }
-        .button:hover {
-            opacity: 0.9; /* Efecto de opacidad al pasar el ratón */
+        .rss-button {
+            background-color: #4CAF50; /* Color de fondo para el botón de RSS */
+        }
+        .rss-button:hover {
+            background-color: #45A049; /* Color más oscuro al pasar el ratón */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile">
-            <h1>Yzk Rafa BF</h1>
-            <p class="description">💯🖤🕊️</p>
+            <h1 style="text-align: center;">Yzk Rafa BF</h1>
+            <p class="description" style="text-align: center;">💯🖤🕊️</p>
             <ul class="social-links">
-                <li><a class="gmail" href="mailto:yzkrafabf@gmail.com" target="_blank">Gmail: yzkrafabf@gmail.com</a></li>
-                <li><a class="youtube" href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe" target="_blank">YouTube: @yzkrafabf</a></li>
-                <li><a class="facebook" href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL" target="_blank">Facebook: yzkrafabf</a></li>
-                <li><a class="whatsapp" href="https://wa.me/525516447433" target="_blank">WhatsApp: +52 55 1644 7433</a></li>
-                <li><a class="x" href="https://x.com/yzkrafabf?s=09" target="_blank">X: @yzkrafabf</a></li>
-                <li><a class="instagram" href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==" target="_blank">Instagram: @yzkrafabf</a></li>
-                <li><a class="tiktok" href="https://www.tiktok.com/@yzkrafabf?_t=8qgL2CdnFp8&_r=1" target="_blank">TikTok: @yzkrafabf</a></li>
-                <li><a class="telegram" href="https://t.me/yzkrafabf" target="_blank">Telegram: @yzkrafabf</a></li>
-                <li><a class="threads" href="https://www.threads.net/@yzkrafabf?invite=4" target="_blank">Threads: @yzkrafabf</a></li>
-                <li><a class="snapchat" href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX" target="_blank">Snapchat: yzkrafab</a></li>
+                <li><a href="mailto:yzkrafabf@gmail.com" target="_blank">Gmail: yzkrafabf@gmail.com</a></li>
+                <li><a href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe" target="_blank">YouTube: @yzkrafabf</a></li>
+                <li><a href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL" target="_blank">Facebook: yzkrafabf</a></li>
+                <li><a href="https://wa.me/525516447433" target="_blank">WhatsApp: +52 55 1644 7433</a></li>
+                <li><a href="https://x.com/yzkrafabf?s=09" target="_blank">X: @yzkrafabf</a></li>
+                <li><a href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==" target="_blank">Instagram: @yzkrafabf</a></li>
+                <li><a href="https://www.tiktok.com/@yzkrafabf?_t=8qgL2CdnFp8&_r=1" target="_blank">TikTok: @yzkrafabf</a></li>
+                <li><a href="https://t.me/yzkrafabf" target="_blank">Telegram: @yzkrafabf</a></li>
+                <li><a href="https://www.threads.net/@yzkrafabf?invite=4" target="_blank">Threads: @yzkrafabf</a></li>
+                <li><a href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX" target="_blank">Snapchat: yzkrafab</a></li>
+                <li>
+                    <a class="spotify-button" href="https://podcasters.spotify.com/pod/show/yzkrafabf" target="_blank">Spotify for Podcasters</a>
+                </li>
+                <li>
+                    <button class="rss-button" onclick="copyToClipboard()">RSS: https://anchor.fm/s/f30bbeb0/podcast/rss</button>
+                </li>
                 <li><a class="discord" href="https://discord.gg/4sUrSpNJ" target="_blank">Discord: yzkrafabf</a></li>
                 <li><a class="reddit" href="https://www.reddit.com/u/yzkrafabf/s/l2lOIQeM6B" target="_blank">Reddit: yzkrafabf</a></li>
                 <li><a class="linkedin" href="https://www.linkedin.com/in/yzk-rafa-bf-5a618b2b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn: yzk-rafa-bf</a></li>
                 <li><a class="github" href="https://github.com/yzkrafabf" target="_blank">GitHub: yzkrafabf</a></li>
-                <li>
-                    <a class="button button-blue" href="https://podcasters.spotify.com/pod/show/yzkrafabf" target="_blank">Spotify for Podcasters</a>
-                    <a class="button button-green" id="copy-rss">Copiar RSS</a>
-                    <input type="text" id="rss-url" value="https://anchor.fm/s/f30bbeb0/podcast/rss" style="position: absolute; left: -9999px;"> <!-- Oculta el campo de texto -->
-                </li>
             </ul>
         </div>
     </div>
     <script>
-        document.getElementById('copy-rss').onclick = function() {
-            const rssInput = document.getElementById('rss-url');
-            rssInput.select();
-            document.execCommand('copy');
-            alert('Enlace RSS copiado al portapapeles');
-        };
+        function copyToClipboard() {
+            const rssLink = 'https://anchor.fm/s/f30bbeb0/podcast/rss';
+            navigator.clipboard.writeText(rssLink).then(() => {
+                alert('Enlace RSS copiado al portapapeles: ' + rssLink);
+            }, (err) => {
+                alert('Error al copiar el enlace: ', err);
+            });
+        }
     </script>
 </body>
 </html>
