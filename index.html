@@ -45,10 +45,17 @@
             background-color: #17B64D; /* Color más oscuro al pasar el ratón */
         }
         .rss-button {
-            background-color: #4CAF50; /* Color de fondo para el botón de RSS */
+            background-color: #f9c74f; /* Color de fondo amarillo suave */
+            color: #000; /* Color del texto */
+            border: 2px solid #f9c74f; /* Borde amarillo suave */
+            transition: background-color 0.3s, color 0.3s; /* Transición suave */
+            padding: 10px 15px; /* Espaciado interno */
+            border-radius: 10px; /* Bordes redondeados */
+            margin: 10px 0; /* Margen superior e inferior */
         }
         .rss-button:hover {
-            background-color: #45A049; /* Color más oscuro al pasar el ratón */
+            background-color: #f8e71c; /* Color más brillante al pasar el ratón */
+            color: #000; /* Mantiene el color del texto */
         }
     </style>
 </head>
@@ -58,21 +65,22 @@
             <h1 style="text-align: center;">Yzk Rafa BF</h1>
             <p class="description" style="text-align: center;">💯🖤🕊️</p>
             <ul class="social-links">
-                <li><a href="mailto:yzkrafabf@gmail.com" target="_blank">Gmail: yzkrafabf@gmail.com</a></li>
-                <li><a href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe" target="_blank">YouTube: @yzkrafabf</a></li>
-                <li><a href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL" target="_blank">Facebook: yzkrafabf</a></li>
-                <li><a href="https://wa.me/525516447433" target="_blank">WhatsApp: +52 55 1644 7433</a></li>
-                <li><a href="https://x.com/yzkrafabf?s=09" target="_blank">X: @yzkrafabf</a></li>
-                <li><a href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==" target="_blank">Instagram: @yzkrafabf</a></li>
-                <li><a href="https://www.tiktok.com/@yzkrafabf?_t=8qgL2CdnFp8&_r=1" target="_blank">TikTok: @yzkrafabf</a></li>
-                <li><a href="https://t.me/yzkrafabf" target="_blank">Telegram: @yzkrafabf</a></li>
-                <li><a href="https://www.threads.net/@yzkrafabf?invite=4" target="_blank">Threads: @yzkrafabf</a></li>
-                <li><a href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX" target="_blank">Snapchat: yzkrafab</a></li>
+                <li><a class="gmail" href="mailto:yzkrafabf@gmail.com" target="_blank">Gmail: yzkrafabf@gmail.com</a></li>
+                <li><a class="youtube" href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe" target="_blank">YouTube: @yzkrafabf</a></li>
+                <li><a class="facebook" href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL" target="_blank">Facebook: yzkrafabf</a></li>
+                <li><a class="whatsapp" href="https://wa.me/525516447433" target="_blank">WhatsApp: +52 55 1644 7433</a></li>
+                <li><a class="x" href="https://x.com/yzkrafabf?s=09" target="_blank">X: @yzkrafabf</a></li>
+                <li><a class="instagram" href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==" target="_blank">Instagram: @yzkrafabf</a></li>
+                <li><a class="tiktok" href="https://www.tiktok.com/@yzkrafabf?_t=8qgL2CdnFp8&_r=1" target="_blank">TikTok: @yzkrafabf</a></li>
+                <li><a class="telegram" href="https://t.me/yzkrafabf" target="_blank">Telegram: @yzkrafabf</a></li>
+                <li><a class="threads" href="https://www.threads.net/@yzkrafabf?invite=4" target="_blank">Threads: @yzkrafabf</a></li>
+                <li><a class="snapchat" href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX" target="_blank">Snapchat: yzkrafab</a></li>
+                <li><a class="spotify-button" href="https://podcasters.spotify.com/pod/show/yzkrafabf" target="_blank">Spotify for Podcasters</a></li>
                 <li>
-                    <a class="spotify-button" href="https://podcasters.spotify.com/pod/show/yzkrafabf" target="_blank">Spotify for Podcasters</a>
+                    <button class="rss-button" onclick="copyToClipboard('https://anchor.fm/s/f30bbeb0/podcast/rss')">RSS</button>
                 </li>
                 <li>
-                    <button class="rss-button" onclick="copyToClipboard()">RSS: https://anchor.fm/s/f30bbeb0/podcast/rss</button>
+                    <button class="button spotify-button" onclick="window.open('https://open.spotify.com/show/1d8WYEHOEINO8TojnG7nh4', '_blank');">Spotify</button>
                 </li>
                 <li><a class="discord" href="https://discord.gg/4sUrSpNJ" target="_blank">Discord: yzkrafabf</a></li>
                 <li><a class="reddit" href="https://www.reddit.com/u/yzkrafabf/s/l2lOIQeM6B" target="_blank">Reddit: yzkrafabf</a></li>
@@ -82,12 +90,11 @@
         </div>
     </div>
     <script>
-        function copyToClipboard() {
-            const rssLink = 'https://anchor.fm/s/f30bbeb0/podcast/rss';
-            navigator.clipboard.writeText(rssLink).then(() => {
-                alert('Enlace RSS copiado al portapapeles: ' + rssLink);
-            }, (err) => {
-                alert('Error al copiar el enlace: ', err);
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Enlace RSS copiado al portapapeles!');
+            }).catch(err => {
+                console.error('Error al copiar el texto: ', err);
             });
         }
     </script>
