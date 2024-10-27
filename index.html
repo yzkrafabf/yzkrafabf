@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yzk Rafa BF</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .social-links {
+            list-style-type: none; /* Quita las viñetas predeterminadas */
+            padding: 0; /* Elimina el padding */
+        }
+        .social-links li {
+            position: relative; /* Necesario para las viñetas personalizadas */
+            padding-left: 20px; /* Espacio para la viñeta */
+        }
+        .social-links li:before {
+            content: "•"; /* Caracter de la viñeta */
+            position: absolute; /* Posiciona la viñeta */
+            left: 0; /* Alinea a la izquierda */
+            color: #3498db; /* Color de la viñeta */
+            font-size: 1.5em; /* Tamaño de la viñeta */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
