@@ -23,7 +23,7 @@
         }
 
         .container {
-            max-width: 1000px;  /* Un poco más grande para TV */
+            max-width: 1000px;
             width: 100%;
             margin: 0 auto;
         }
@@ -35,6 +35,40 @@
             padding: 40px 30px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Estilos para las imágenes */
+        .profile-images {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .portada {
+            width: 100%;
+            height: 150px; /* Menos panorámico */
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 3px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .portada img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .perfil {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px auto; /* centrado y espacio abajo */
+            border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .perfil img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
@@ -52,43 +86,9 @@
         .description {
             text-align: center;
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             color: #666;
             letter-spacing: 2px;
-        }
-
-        /* Estilos para las imágenes */
-        .profile-images {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .portada {
-            width: 100%;
-            height: 180px; /* un poco más alto para que se vea bien en TV */
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            border: 3px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .portada img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .perfil {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto;
-            border: 4px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .perfil img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .ventana-titulo {
@@ -133,7 +133,7 @@
             background-color: #e0e0e0;
             padding: 15px 10px;
             font-weight: 700;
-            min-width: 160px;  /* un poco más ancho para números */
+            min-width: 160px;
             text-align: center;
             border-right: 2px solid #ccc;
             font-size: 0.95rem;
@@ -210,7 +210,7 @@
             background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
         }
 
-        /* Responsive para celular y TV */
+        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 max-width: 100%;
@@ -218,18 +218,20 @@
             .profile {
                 padding: 30px 20px;
             }
+            .portada {
+                height: 120px; /* menos altura en móvil */
+            }
+            .perfil {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 15px;
+            }
             h1 {
                 font-size: 2rem;
             }
             .description {
                 font-size: 1.2rem;
-            }
-            .portada {
-                height: 150px;
-            }
-            .perfil {
-                width: 100px;
-                height: 100px;
+                margin-bottom: 25px;
             }
             .ventana-titulo {
                 font-size: 1.3rem;
@@ -259,18 +261,20 @@
             .profile {
                 padding: 20px 15px;
             }
+            .portada {
+                height: 100px;
+            }
+            .perfil {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
             h1 {
                 font-size: 1.8rem;
             }
             .description {
                 font-size: 1rem;
-            }
-            .portada {
-                height: 120px;
-            }
-            .perfil {
-                width: 80px;
-                height: 80px;
+                margin-bottom: 20px;
             }
             .social-nombre {
                 font-size: 0.85rem;
@@ -282,10 +286,17 @@
             }
         }
 
-        /* Para pantallas grandes (TV) */
+        /* Pantallas grandes (TV) */
         @media (min-width: 1400px) {
             .container {
                 max-width: 1200px;
+            }
+            .portada {
+                height: 200px;
+            }
+            .perfil {
+                width: 180px;
+                height: 180px;
             }
             h1 {
                 font-size: 3rem;
@@ -293,41 +304,27 @@
             .description {
                 font-size: 2rem;
             }
-            .portada {
-                height: 250px;
-            }
-            .perfil {
-                width: 180px;
-                height: 180px;
-            }
-            .ventana-titulo {
-                font-size: 2rem;
-            }
-            .social-nombre {
-                font-size: 1.2rem;
-                min-width: 220px;
-            }
-            .btn-misma, .btn-nueva {
-                font-size: 1.2rem;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile">
-            <h1 onclick="location.reload()">Yzk Rafa BF</h1>
-            <p class="description">💫🖤🪽</p>
-
-            <!-- FOTOS DE PERFIL Y PORTADA -->
+            <!-- PRIMERO: Portada -->
             <div class="profile-images">
                 <div class="portada">
                     <img src="portada.jpg" alt="Portada">
                 </div>
+                <!-- SEGUNDO: Perfil -->
                 <div class="perfil">
                     <img src="perfil.jpg" alt="Perfil">
                 </div>
             </div>
+
+            <!-- TERCERO: Nombre -->
+            <h1 onclick="location.reload()">Yzk Rafa BF</h1>
+            <!-- CUARTO: Emojis -->
+            <p class="description">💫🖤🪽</p>
 
             <!-- VENTANA 1: Frc (LinkedIn) -->
             <div style="margin-bottom: 30px;">
