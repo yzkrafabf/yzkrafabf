@@ -97,7 +97,7 @@
             gap: 8px;
         }
 
-        /* ===== SECCIONES MEJORADAS (Frc, Rds, Etm) ===== */
+        /* ===== SECCIONES (Frc, Rds, Etm) ===== */
         .sections {
             padding: 0 25px;
             display: flex;
@@ -119,17 +119,9 @@
             border-bottom-color: #667eea;
         }
 
-        /* ===== CONTENEDOR DE REDES (DISEÑO ANTERIOR MEJORADO) ===== */
+        /* ===== CONTENEDOR DE REDES ===== */
         .social-container {
             padding: 25px;
-        }
-
-        .ventana-titulo {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-            font-weight: 600;
-            display: none; /* Oculto porque usamos pestañas */
         }
 
         .social-links {
@@ -160,7 +152,8 @@
             border-left: 6px solid transparent;
         }
 
-        .social-nombre {
+        /* PRIMERA COLUMNA - AHORA ES UN LINK */
+        .social-link-principal {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -173,6 +166,13 @@
             font-size: 0.95rem;
             word-break: break-word;
             line-height: 1.4;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        .social-link-principal:hover {
+            background-color: #d9e2e8;
+            text-decoration: underline;
         }
 
         .btn-misma {
@@ -280,7 +280,7 @@
             .social-item {
                 flex-wrap: wrap;
             }
-            .social-nombre {
+            .social-link-principal {
                 width: 100%;
                 border-radius: 16px 16px 0 0;
                 border-right: none;
@@ -320,7 +320,7 @@
             .social-container {
                 padding: 15px;
             }
-            .social-nombre {
+            .social-link-principal {
                 font-size: 0.85rem;
                 padding: 12px 8px;
             }
@@ -355,7 +355,7 @@
 <body>
     <div class="container">
         <div class="profile-card">
-            <!-- ===== PERFIL (ESTILO RED SOCIAL) ===== -->
+            <!-- ===== PERFIL ===== -->
             <div class="cover-photo">
                 <img src="portada.jpg" alt="Portada">
             </div>
@@ -372,21 +372,22 @@
                 </div>
             </div>
 
-            <!-- ===== SECCIONES ===== -->
+            <!-- ===== SECCIONES (UNA DETRÁS DE OTRA) ===== -->
             <div class="sections">
                 <div class="section-tab active">Frc</div>
                 <div class="section-tab">Rds</div>
                 <div class="section-tab">Etm</div>
             </div>
 
-            <!-- ===== CONTENIDO DE SECCIONES (DISEÑO ANTERIOR MEJORADO) ===== -->
+            <!-- ===== CONTENIDO ===== -->
             <div class="social-container">
-                <!-- VENTANA Frc (LinkedIn) -->
+                <!-- SECCIÓN Frc (LinkedIn) -->
                 <div style="margin-bottom: 30px;">
                     <ul class="social-links">
                         <li>
                             <div class="social-item linkedin">
-                                <span class="social-nombre">🔗 LinkedIn</span>
+                                <!-- PRIMERA COLUMNA: Link a LinkedIn principal -->
+                                <a class="social-link-principal" href="https://www.linkedin.com" target="_blank">🔗 LinkedIn</a>
                                 <a class="btn-misma" href="https://www.linkedin.com/in/yzk-rafa-bf-5a618b2b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://www.linkedin.com/in/yzk-rafa-bf-5a618b2b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -394,13 +395,13 @@
                     </ul>
                 </div>
 
-                <!-- VENTANA Rds (Todas las redes) -->
+                <!-- SECCIÓN Rds (Todas las redes) -->
                 <div style="margin-bottom: 30px;">
                     <ul class="social-links">
-                        <!-- Gmail -->
+                        <!-- Gmail (no tiene página principal, se deja igual) -->
                         <li>
                             <div class="social-item gmail">
-                                <span class="social-nombre">📧 Gmail</span>
+                                <span class="social-link-principal">📧 Gmail</span>
                                 <a class="btn-misma" href="mailto:yzkrafabf@gmail.com">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="mailto:yzkrafabf@gmail.com" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -409,34 +410,34 @@
                         <!-- Facebook -->
                         <li>
                             <div class="social-item facebook">
-                                <span class="social-nombre">📘 Facebook</span>
+                                <a class="social-link-principal" href="https://www.facebook.com" target="_blank">📘 Facebook</a>
                                 <a class="btn-misma" href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
 
-                        <!-- WhatsApp Unefon -->
+                        <!-- WhatsApp Unefon (no tiene página principal) -->
                         <li>
                             <div class="social-item whatsapp">
-                                <span class="social-nombre">💬 WhatsApp Unefon<br>55 1644 7433</span>
+                                <span class="social-link-principal">💬 WhatsApp Unefon<br>55 1644 7433</span>
                                 <a class="btn-misma" href="https://wa.me/525516447433">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://wa.me/525516447433" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
 
-                        <!-- WhatsApp Bait -->
+                        <!-- WhatsApp Bait (no tiene página principal) -->
                         <li>
                             <div class="social-item whatsapp">
-                                <span class="social-nombre">💬 WhatsApp Bait<br>33 5145 7684</span>
+                                <span class="social-link-principal">💬 WhatsApp Bait<br>33 5145 7684</span>
                                 <a class="btn-misma" href="https://wa.me/523351457684">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://wa.me/523351457684" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
 
-                        <!-- X -->
+                        <!-- X (Twitter) -->
                         <li>
                             <div class="social-item x">
-                                <span class="social-nombre">🐦 X</span>
+                                <a class="social-link-principal" href="https://x.com" target="_blank">🐦 X</a>
                                 <a class="btn-misma" href="https://x.com/yzkrafabf?s=09">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://x.com/yzkrafabf?s=09" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -445,7 +446,7 @@
                         <!-- Instagram -->
                         <li>
                             <div class="social-item instagram">
-                                <span class="social-nombre">📷 Instagram</span>
+                                <a class="social-link-principal" href="https://www.instagram.com" target="_blank">📷 Instagram</a>
                                 <a class="btn-misma" href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -454,7 +455,7 @@
                         <!-- TikTok -->
                         <li>
                             <div class="social-item tiktok">
-                                <span class="social-nombre">🎵 TikTok</span>
+                                <a class="social-link-principal" href="https://www.tiktok.com" target="_blank">🎵 TikTok</a>
                                 <a class="btn-misma" href="https://www.tiktok.com/@yzkrafabf?_r=1&_t=ZS-94fBUDz0jTT">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://www.tiktok.com/@yzkrafabf?_r=1&_t=ZS-94fBUDz0jTT" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -463,7 +464,7 @@
                         <!-- Telegram -->
                         <li>
                             <div class="social-item telegram">
-                                <span class="social-nombre">✈️ Telegram</span>
+                                <a class="social-link-principal" href="https://telegram.org" target="_blank">✈️ Telegram</a>
                                 <a class="btn-misma" href="https://t.me/yzkrafabf">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://t.me/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -472,7 +473,7 @@
                         <!-- Threads -->
                         <li>
                             <div class="social-item threads">
-                                <span class="social-nombre">🧵 Threads</span>
+                                <a class="social-link-principal" href="https://www.threads.net" target="_blank">🧵 Threads</a>
                                 <a class="btn-misma" href="https://www.threads.net/@yzkrafabf?invite=4">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://www.threads.net/@yzkrafabf?invite=4" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -481,7 +482,7 @@
                         <!-- Snapchat -->
                         <li>
                             <div class="social-item snapchat">
-                                <span class="social-nombre">👻 Snapchat</span>
+                                <a class="social-link-principal" href="https://www.snapchat.com" target="_blank">👻 Snapchat</a>
                                 <a class="btn-misma" href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -490,7 +491,7 @@
                         <!-- Discord -->
                         <li>
                             <div class="social-item discord">
-                                <span class="social-nombre">💬 Discord</span>
+                                <a class="social-link-principal" href="https://discord.com" target="_blank">💬 Discord</a>
                                 <a class="btn-misma" href="https://discord.gg/4sUrSpNJ">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://discord.gg/4sUrSpNJ" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -499,7 +500,7 @@
                         <!-- Reddit -->
                         <li>
                             <div class="social-item reddit">
-                                <span class="social-nombre">👽 Reddit</span>
+                                <a class="social-link-principal" href="https://www.reddit.com" target="_blank">👽 Reddit</a>
                                 <a class="btn-misma" href="https://www.reddit.com/u/yzkrafab?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=1">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://www.reddit.com/u/yzkrafab?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=1" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -508,7 +509,7 @@
                         <!-- GitHub -->
                         <li>
                             <div class="social-item github">
-                                <span class="social-nombre">🐙 GitHub</span>
+                                <a class="social-link-principal" href="https://github.com" target="_blank">🐙 GitHub</a>
                                 <a class="btn-misma" href="https://github.com/yzkrafabf">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://github.com/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
                             </div>
@@ -516,22 +517,22 @@
                     </ul>
                 </div>
 
-                <!-- VENTANA Etm (YouTube, Podcast y RSS) -->
+                <!-- SECCIÓN Etm (YouTube, Podcast y RSS) -->
                 <div style="margin-bottom: 30px;">
                     <ul class="social-links">
                         <!-- YouTube -->
                         <li>
                             <div class="social-item youtube">
-                                <span class="social-nombre">▶️ YouTube</span>
+                                <a class="social-link-principal" href="https://youtube.com" target="_blank">▶️ YouTube</a>
                                 <a class="btn-misma" href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
 
-                        <!-- Podcast -->
+                        <!-- Podcast (Spotify) -->
                         <li>
                             <div class="social-item spotify">
-                                <span class="social-nombre">🎙️ Podcast</span>
+                                <a class="social-link-principal" href="https://open.spotify.com" target="_blank">🎙️ Podcast</a>
                                 <a class="btn-misma" href="https://podcasters.spotify.com/pod/show/yzkrafabf">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://podcasters.spotify.com/pod/show/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
                             </div>
