@@ -27,16 +27,13 @@
             margin: 0 auto;
         }
 
-        /* ===== TARJETA PRINCIPAL CON ESTILO MODERNO ===== */
         .profile-card {
             background: #ffffff;
             border-radius: 48px 48px 32px 32px;
             overflow: hidden;
             box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* ===== PORTADA CON EFECTO SUTIL ===== */
         .cover-photo {
             width: 100%;
             height: 170px;
@@ -59,7 +56,6 @@
             object-fit: cover;
         }
 
-        /* ===== HEADER DE PERFIL CON ESPACIO NEGATIVO ===== */
         .profile-header {
             padding: 0 28px 20px;
             position: relative;
@@ -69,7 +65,6 @@
             flex-wrap: wrap;
         }
 
-        /* FOTO DE PERFIL CON BORDE GLOW */
         .profile-photo {
             margin-top: -52px;
             width: 116px;
@@ -123,7 +118,7 @@
             font-weight: 500;
         }
 
-        /* ===== PESTAÑAS DE SECCIONES CON DISEÑO MINIMAL ===== */
+        /* ===== PESTAÑAS FUNCIONALES ===== */
         .sections {
             padding: 0 28px;
             display: flex;
@@ -136,20 +131,30 @@
             font-weight: 600;
             font-size: 1.1rem;
             color: #94a3b8;
-            cursor: default;
+            cursor: pointer;
             border-bottom: 3px solid transparent;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
         }
         .section-tab.active {
             color: #3b82f6;
             border-bottom-color: #3b82f6;
         }
+        .section-tab:hover {
+            color: #64748b;
+        }
 
-        /* ===== CONTENEDOR DE REDES CON ESPACIADO ===== */
+        /* ===== CONTENEDOR DE REDES ===== */
         .social-container {
             padding: 28px;
+        }
+
+        .section-content {
+            display: none;
+        }
+        .section-content.active {
+            display: block;
         }
 
         .social-links {
@@ -180,7 +185,6 @@
             align-items: stretch;
         }
 
-        /* PRIMERA COLUMNA - TARJETA DE RED SOCIAL */
         .social-link-principal,
         .social-item > span:first-child {
             display: flex;
@@ -208,7 +212,6 @@
             color: #3b82f6;
         }
 
-        /* SEGUNDA Y TERCERA COLUMNA - BOTONES SIMÉTRICOS */
         .btn-misma,
         .btn-nueva {
             flex: 1;
@@ -252,7 +255,7 @@
             color: #6d28d9;
         }
 
-        /* COLORES ESPECÍFICOS PARA CADA RED (borde izquierdo) */
+        /* Colores específicos */
         .gmail .social-link-principal,
         .gmail > span:first-child { border-left: 4px solid #EA4335; }
         .youtube .social-link-principal,
@@ -284,7 +287,6 @@
         .github .social-link-principal,
         .github > span:first-child { border-left: 4px solid #333; }
 
-        /* BOTÓN RSS CON ESTILO DESTACADO */
         .rss-button {
             width: 100%;
             padding: 18px 24px;
@@ -308,7 +310,6 @@
             background: linear-gradient(145deg, #fb923c, #ef4444);
         }
 
-        /* ===== RESPONSIVE PERFECTO ===== */
         @media (max-width: 700px) {
             .social-item {
                 flex-wrap: wrap;
@@ -371,15 +372,6 @@
             }
         }
 
-        @media (max-width: 360px) {
-            .btn-misma,
-            .btn-nueva {
-                font-size: 0.75rem;
-                padding: 12px 4px;
-            }
-        }
-
-        /* ===== PANTALLAS GIGANTES (TV) ===== */
         @media (min-width: 1400px) {
             .container {
                 max-width: 1000px;
@@ -398,24 +390,13 @@
             .profile-bio {
                 font-size: 1.5rem;
             }
-            .social-link-principal,
-            .social-item > span:first-child {
-                min-width: 200px;
-                font-size: 1.1rem;
-                padding: 22px 16px;
-            }
-            .btn-misma,
-            .btn-nueva {
-                font-size: 1.1rem;
-                padding: 22px 16px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile-card">
-            <!-- ===== PERFIL ===== -->
+            <!-- PERFIL -->
             <div class="cover-photo">
                 <img src="portada.jpg" alt="Portada">
             </div>
@@ -432,17 +413,17 @@
                 </div>
             </div>
 
-            <!-- ===== SECCIONES ===== -->
+            <!-- PESTAÑAS FUNCIONALES -->
             <div class="sections">
-                <div class="section-tab active">Frc</div>
-                <div class="section-tab">Rds</div>
-                <div class="section-tab">Etm</div>
+                <div class="section-tab active" onclick="showSection('frc')">Frc</div>
+                <div class="section-tab" onclick="showSection('rds')">Rds</div>
+                <div class="section-tab" onclick="showSection('etm')">Etm</div>
             </div>
 
-            <!-- ===== CONTENIDO (TU HTML EXACTO) ===== -->
+            <!-- CONTENIDO DE SECCIONES -->
             <div class="social-container">
-                <!-- SECCIÓN Frc (LinkedIn) -->
-                <div style="margin-bottom: 30px;">
+                <!-- SECCIÓN Frc -->
+                <div id="frc" class="section-content active">
                     <ul class="social-links">
                         <li>
                             <div class="social-item linkedin">
@@ -454,8 +435,8 @@
                     </ul>
                 </div>
 
-                <!-- SECCIÓN Rds (Todas las redes) -->
-                <div style="margin-bottom: 30px;">
+                <!-- SECCIÓN Rds -->
+                <div id="rds" class="section-content">
                     <ul class="social-links">
                         <!-- Gmail -->
                         <li>
@@ -465,7 +446,6 @@
                                 <a class="btn-nueva" href="mailto:yzkrafabf@gmail.com" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- Facebook -->
                         <li>
                             <div class="social-item facebook">
@@ -474,7 +454,6 @@
                                 <a class="btn-nueva" href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- WhatsApp Unefon -->
                         <li>
                             <div class="social-item whatsapp">
@@ -483,7 +462,6 @@
                                 <a class="btn-nueva" href="https://wa.me/525516447433" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- WhatsApp Bait -->
                         <li>
                             <div class="social-item whatsapp">
@@ -492,7 +470,6 @@
                                 <a class="btn-nueva" href="https://wa.me/523351457684" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- X -->
                         <li>
                             <div class="social-item x">
@@ -501,7 +478,6 @@
                                 <a class="btn-nueva" href="https://x.com/yzkrafabf?s=09" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- Instagram -->
                         <li>
                             <div class="social-item instagram">
@@ -510,7 +486,6 @@
                                 <a class="btn-nueva" href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- TikTok -->
                         <li>
                             <div class="social-item tiktok">
@@ -519,7 +494,6 @@
                                 <a class="btn-nueva" href="https://www.tiktok.com/@yzkrafabf?_r=1&_t=ZS-94fBUDz0jTT" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- Telegram -->
                         <li>
                             <div class="social-item telegram">
@@ -528,7 +502,6 @@
                                 <a class="btn-nueva" href="https://t.me/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- Threads -->
                         <li>
                             <div class="social-item threads">
@@ -537,7 +510,6 @@
                                 <a class="btn-nueva" href="https://www.threads.net/@yzkrafabf?invite=4" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- Snapchat -->
                         <li>
                             <div class="social-item snapchat">
@@ -546,7 +518,6 @@
                                 <a class="btn-nueva" href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- Discord -->
                         <li>
                             <div class="social-item discord">
@@ -555,7 +526,6 @@
                                 <a class="btn-nueva" href="https://discord.gg/4sUrSpNJ" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- Reddit -->
                         <li>
                             <div class="social-item reddit">
@@ -564,7 +534,6 @@
                                 <a class="btn-nueva" href="https://www.reddit.com/u/yzkrafab?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=1" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- GitHub -->
                         <li>
                             <div class="social-item github">
@@ -576,8 +545,8 @@
                     </ul>
                 </div>
 
-                <!-- SECCIÓN Etm (YouTube, Podcast y RSS) -->
-                <div style="margin-bottom: 30px;">
+                <!-- SECCIÓN Etm -->
+                <div id="etm" class="section-content">
                     <ul class="social-links">
                         <!-- YouTube -->
                         <li>
@@ -587,7 +556,6 @@
                                 <a class="btn-nueva" href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
                         <!-- Podcast -->
                         <li>
                             <div class="social-item spotify">
@@ -596,8 +564,7 @@
                                 <a class="btn-nueva" href="https://podcasters.spotify.com/pod/show/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-
-                        <!-- RSS Button -->
+                        <!-- RSS -->
                         <li>
                             <button class="rss-button" onclick="copyToClipboard('https://anchor.fm/s/f30bbeb0/podcast/rss')">📋 Copiar RSS al Portapapeles</button>
                         </li>
@@ -608,6 +575,24 @@
     </div>
 
     <script>
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.section-content').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Quitar active de todas las pestañas
+            document.querySelectorAll('.section-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Mostrar la sección seleccionada
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Activar la pestaña clickeada
+            event.target.classList.add('active');
+        }
+
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
                 alert('¡Enlace RSS copiado al portapapeles!');
