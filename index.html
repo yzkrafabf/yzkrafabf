@@ -12,33 +12,46 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 16px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 720px;
             width: 100%;
             margin: 0 auto;
         }
 
-        /* ===== ESTILO PERFIL (RED SOCIAL) ===== */
+        /* ===== TARJETA PRINCIPAL CON ESTILO MODERNO ===== */
         .profile-card {
-            background: white;
-            border-radius: 30px 30px 20px 20px;
+            background: #ffffff;
+            border-radius: 48px 48px 32px 32px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* ===== PORTADA CON EFECTO SUTIL ===== */
         .cover-photo {
             width: 100%;
-            height: 180px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            height: 170px;
+            background: linear-gradient(145deg, #3b82f6, #8b5cf6);
+            position: relative;
+            overflow: hidden;
+        }
+        .cover-photo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.2) 100%);
         }
         .cover-photo img {
             width: 100%;
@@ -46,24 +59,32 @@
             object-fit: cover;
         }
 
+        /* ===== HEADER DE PERFIL CON ESPACIO NEGATIVO ===== */
         .profile-header {
-            padding: 0 25px 20px;
+            padding: 0 28px 20px;
             position: relative;
             display: flex;
             align-items: flex-end;
-            gap: 20px;
+            gap: 22px;
             flex-wrap: wrap;
         }
 
+        /* FOTO DE PERFIL CON BORDE GLOW */
         .profile-photo {
-            margin-top: -50px;
-            width: 120px;
-            height: 120px;
+            margin-top: -52px;
+            width: 116px;
+            height: 116px;
             border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 4px solid #ffffff;
+            box-shadow: 0 15px 30px -8px #3b82f6;
             overflow: hidden;
             background: white;
+            transition: all 0.4s ease;
+            z-index: 5;
+        }
+        .profile-photo:hover {
+            transform: scale(1.03) rotate(2deg);
+            box-shadow: 0 20px 35px -5px #8b5cf6;
         }
         .profile-photo img {
             width: 100%;
@@ -73,264 +94,292 @@
 
         .profile-info {
             flex: 1;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
         }
         .profile-info h1 {
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-            color: #333;
-            cursor: pointer;
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-size: 2.3rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+            background: linear-gradient(145deg, #1e293b, #334155);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 700;
+            cursor: pointer;
+            display: inline-block;
+            letter-spacing: -0.03em;
         }
         .profile-info h1:hover {
             opacity: 0.8;
         }
         .profile-bio {
-            color: #666;
+            color: #475569;
             font-size: 1.3rem;
             display: flex;
             align-items: center;
             gap: 8px;
+            background: #f1f5f9;
+            padding: 6px 18px;
+            border-radius: 40px;
+            width: fit-content;
+            font-weight: 500;
         }
 
-        /* ===== SECCIONES (Frc, Rds, Etm) ===== */
+        /* ===== PESTAÑAS DE SECCIONES CON DISEÑO MINIMAL ===== */
         .sections {
-            padding: 0 25px;
+            padding: 0 28px;
             display: flex;
-            gap: 15px;
-            border-bottom: 2px solid #f0f0f0;
-            margin-top: 5px;
+            gap: 24px;
+            border-bottom: 2px solid #eef2f6;
+            margin-top: 10px;
         }
         .section-tab {
-            padding: 12px 0;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #999;
+            padding: 14px 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #94a3b8;
             cursor: default;
             border-bottom: 3px solid transparent;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
+            transition: color 0.2s ease;
         }
         .section-tab.active {
-            color: #667eea;
-            border-bottom-color: #667eea;
+            color: #3b82f6;
+            border-bottom-color: #3b82f6;
         }
 
-        /* ===== CONTENEDOR DE REDES ===== */
+        /* ===== CONTENEDOR DE REDES CON ESPACIADO ===== */
         .social-container {
-            padding: 25px;
+            padding: 28px;
         }
 
         .social-links {
-            list-style-type: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
         }
 
         .social-links li {
             margin: 0;
-            border-radius: 16px;
+            border-radius: 28px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            background: #ffffff;
+            border: 1px solid #eef2f6;
         }
 
         .social-links li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: #3b82f6;
+            box-shadow: 0 15px 30px -12px #3b82f6;
         }
 
         .social-item {
             display: flex;
             width: 100%;
-            background-color: #f8f9fa;
-            border-left: 6px solid transparent;
+            background: white;
+            align-items: stretch;
         }
 
-        /* PRIMERA COLUMNA - AHORA ES UN LINK */
-        .social-link-principal {
+        /* PRIMERA COLUMNA - TARJETA DE RED SOCIAL */
+        .social-link-principal,
+        .social-item > span:first-child {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #eaeef2;
-            padding: 16px 12px;
+            background: #fafcff;
+            padding: 18px 14px;
             font-weight: 700;
             min-width: 170px;
             text-align: center;
-            border-right: 2px solid #d0d9e0;
             font-size: 0.95rem;
-            word-break: break-word;
             line-height: 1.4;
+            color: #1e293b;
+            border-right: 2px solid #e2e8f0;
+            transition: all 0.2s ease;
+            word-break: break-word;
+        }
+
+        .social-link-principal {
             text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
+            background: #f8fafc;
         }
         .social-link-principal:hover {
-            background-color: #d9e2e8;
-            text-decoration: underline;
+            background: #eef2ff;
+            color: #3b82f6;
         }
 
-        .btn-misma {
-            flex: 1;
-            padding: 16px 12px;
-            text-decoration: none;
-            color: #333;
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            text-align: center;
-            border-left: 1px solid #e0e0e0;
-        }
-
+        /* SEGUNDA Y TERCERA COLUMNA - BOTONES SIMÉTRICOS */
+        .btn-misma,
         .btn-nueva {
             flex: 1;
-            padding: 16px 12px;
+            padding: 18px 12px;
             text-decoration: none;
-            color: #333;
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
+            color: #334155;
+            background: white;
+            transition: all 0.25s ease;
             font-weight: 600;
+            font-size: 0.95rem;
             text-align: center;
-            border-left: 1px solid #e0e0e0;
+            border-left: 1px solid #edf2f7;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-misma:hover, .btn-nueva:hover {
-            background-color: #ffffff;
-            box-shadow: inset 0 0 0 2px rgba(102, 126, 234, 0.2);
+        .btn-misma::before,
+        .btn-nueva::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59,130,246,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-misma:hover::before,
+        .btn-nueva:hover::before {
+            left: 100%;
         }
 
         .btn-misma:hover {
-            background: linear-gradient(135deg, #667eea10, #764ba210);
+            background: #f0f9ff;
+            color: #0369a1;
         }
 
-        /* Colores específicos para cada red social */
-        .gmail { border-left-color: #EA4335; }
-        .youtube { border-left-color: #FF0000; }
-        .facebook { border-left-color: #1877F2; }
-        .whatsapp { border-left-color: #25D366; }
-        .x { border-left-color: #000000; }
-        .instagram { border-left-color: #E4405F; }
-        .tiktok { border-left-color: #000000; }
-        .telegram { border-left-color: #0088cc; }
-        .threads { border-left-color: #000000; }
-        .snapchat { border-left-color: #FFFC00; }
-        .spotify { border-left-color: #1DB954; }
-        .discord { border-left-color: #5865F2; }
-        .reddit { border-left-color: #FF4500; }
-        .linkedin { border-left-color: #0A66C2; }
-        .github { border-left-color: #333; }
+        .btn-nueva:hover {
+            background: #f5f3ff;
+            color: #6d28d9;
+        }
 
-        /* Botón RSS */
+        /* COLORES ESPECÍFICOS PARA CADA RED (borde izquierdo) */
+        .gmail .social-link-principal,
+        .gmail > span:first-child { border-left: 4px solid #EA4335; }
+        .youtube .social-link-principal,
+        .youtube > span:first-child { border-left: 4px solid #FF0000; }
+        .facebook .social-link-principal,
+        .facebook > span:first-child { border-left: 4px solid #1877F2; }
+        .whatsapp .social-link-principal,
+        .whatsapp > span:first-child { border-left: 4px solid #25D366; }
+        .x .social-link-principal,
+        .x > span:first-child { border-left: 4px solid #000000; }
+        .instagram .social-link-principal,
+        .instagram > span:first-child { border-left: 4px solid #E4405F; }
+        .tiktok .social-link-principal,
+        .tiktok > span:first-child { border-left: 4px solid #000000; }
+        .telegram .social-link-principal,
+        .telegram > span:first-child { border-left: 4px solid #0088cc; }
+        .threads .social-link-principal,
+        .threads > span:first-child { border-left: 4px solid #000000; }
+        .snapchat .social-link-principal,
+        .snapchat > span:first-child { border-left: 4px solid #FFFC00; }
+        .spotify .social-link-principal,
+        .spotify > span:first-child { border-left: 4px solid #1DB954; }
+        .discord .social-link-principal,
+        .discord > span:first-child { border-left: 4px solid #5865F2; }
+        .reddit .social-link-principal,
+        .reddit > span:first-child { border-left: 4px solid #FF4500; }
+        .linkedin .social-link-principal,
+        .linkedin > span:first-child { border-left: 4px solid #0A66C2; }
+        .github .social-link-principal,
+        .github > span:first-child { border-left: 4px solid #333; }
+
+        /* BOTÓN RSS CON ESTILO DESTACADO */
         .rss-button {
             width: 100%;
-            padding: 16px 20px;
+            padding: 18px 24px;
             border: none;
-            border-radius: 16px;
+            border-radius: 28px;
             color: white;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(145deg, #f97316, #dc2626);
             cursor: pointer;
             text-align: center;
             font-weight: 700;
             font-size: 1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
-            margin: 5px 0;
+            box-shadow: 0 10px 25px -5px #f97316;
+            letter-spacing: 0.3px;
+            margin: 4px 0;
         }
 
         .rss-button:hover {
             transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+            box-shadow: 0 20px 30px -8px #dc2626;
+            background: linear-gradient(145deg, #fb923c, #ef4444);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* ===== RESPONSIVE PERFECTO ===== */
+        @media (max-width: 700px) {
+            .social-item {
+                flex-wrap: wrap;
+            }
+            .social-link-principal,
+            .social-item > span:first-child {
+                width: 100%;
+                border-radius: 28px 28px 0 0;
+                border-right: none;
+                border-bottom: 2px solid #e2e8f0;
+                min-width: auto;
+                padding: 16px;
+            }
+            .btn-misma,
+            .btn-nueva {
+                padding: 16px 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 520px) {
             .cover-photo {
-                height: 150px;
+                height: 140px;
             }
             .profile-header {
-                padding: 0 20px 15px;
-                gap: 15px;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 8px;
             }
             .profile-photo {
+                margin-top: -56px;
                 width: 100px;
                 height: 100px;
-                margin-top: -40px;
             }
             .profile-info h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             .profile-bio {
+                margin: 0 auto;
                 font-size: 1.1rem;
+                padding: 5px 16px;
             }
             .sections {
-                padding: 0 20px;
+                justify-content: center;
+                gap: 18px;
+                padding: 0 16px;
             }
             .section-tab {
                 font-size: 1rem;
-                padding: 10px 0;
+                padding: 12px 0;
             }
             .social-container {
                 padding: 20px;
             }
-            .social-item {
-                flex-wrap: wrap;
-            }
-            .social-link-principal {
-                width: 100%;
-                border-radius: 16px 16px 0 0;
-                border-right: none;
-                border-bottom: 2px solid #d0d9e0;
-                min-width: auto;
-            }
-            .btn-misma, .btn-nueva {
-                padding: 14px 10px;
+            .btn-misma,
+            .btn-nueva {
+                font-size: 0.85rem;
+                padding: 14px 8px;
             }
         }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            .cover-photo {
-                height: 120px;
-            }
-            .profile-photo {
-                width: 80px;
-                height: 80px;
-                margin-top: -30px;
-            }
-            .profile-info h1 {
-                font-size: 1.5rem;
-            }
-            .profile-bio {
-                font-size: 1rem;
-            }
-            .sections {
-                padding: 0 15px;
-            }
-            .section-tab {
-                font-size: 0.9rem;
-                padding: 8px 0;
-            }
-            .social-container {
-                padding: 15px;
-            }
-            .social-link-principal {
-                font-size: 0.85rem;
-                padding: 12px 8px;
-            }
-            .btn-misma, .btn-nueva {
-                font-size: 0.85rem;
-                padding: 12px 8px;
+        @media (max-width: 360px) {
+            .btn-misma,
+            .btn-nueva {
+                font-size: 0.75rem;
+                padding: 12px 4px;
             }
         }
 
-        /* Pantallas grandes */
+        /* ===== PANTALLAS GIGANTES (TV) ===== */
         @media (min-width: 1400px) {
             .container {
                 max-width: 1000px;
@@ -339,15 +388,26 @@
                 height: 220px;
             }
             .profile-photo {
-                width: 140px;
-                height: 140px;
-                margin-top: -60px;
+                width: 150px;
+                height: 150px;
+                margin-top: -70px;
             }
             .profile-info h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             .profile-bio {
                 font-size: 1.5rem;
+            }
+            .social-link-principal,
+            .social-item > span:first-child {
+                min-width: 200px;
+                font-size: 1.1rem;
+                padding: 22px 16px;
+            }
+            .btn-misma,
+            .btn-nueva {
+                font-size: 1.1rem;
+                padding: 22px 16px;
             }
         }
     </style>
@@ -372,21 +432,20 @@
                 </div>
             </div>
 
-            <!-- ===== SECCIONES (UNA DETRÁS DE OTRA) ===== -->
+            <!-- ===== SECCIONES ===== -->
             <div class="sections">
                 <div class="section-tab active">Frc</div>
                 <div class="section-tab">Rds</div>
                 <div class="section-tab">Etm</div>
             </div>
 
-            <!-- ===== CONTENIDO ===== -->
+            <!-- ===== CONTENIDO (TU HTML EXACTO) ===== -->
             <div class="social-container">
                 <!-- SECCIÓN Frc (LinkedIn) -->
                 <div style="margin-bottom: 30px;">
                     <ul class="social-links">
                         <li>
                             <div class="social-item linkedin">
-                                <!-- PRIMERA COLUMNA: Link a LinkedIn principal -->
                                 <a class="social-link-principal" href="https://www.linkedin.com" target="_blank">🔗 LinkedIn</a>
                                 <a class="btn-misma" href="https://www.linkedin.com/in/yzk-rafa-bf-5a618b2b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">📌 Misma pestaña</a>
                                 <a class="btn-nueva" href="https://www.linkedin.com/in/yzk-rafa-bf-5a618b2b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">🔗 Nueva pestaña</a>
@@ -398,7 +457,7 @@
                 <!-- SECCIÓN Rds (Todas las redes) -->
                 <div style="margin-bottom: 30px;">
                     <ul class="social-links">
-                        <!-- Gmail (no tiene página principal, se deja igual) -->
+                        <!-- Gmail -->
                         <li>
                             <div class="social-item gmail">
                                 <span class="social-link-principal">📧 Gmail</span>
@@ -416,7 +475,7 @@
                             </div>
                         </li>
 
-                        <!-- WhatsApp Unefon (no tiene página principal) -->
+                        <!-- WhatsApp Unefon -->
                         <li>
                             <div class="social-item whatsapp">
                                 <span class="social-link-principal">💬 WhatsApp Unefon<br>55 1644 7433</span>
@@ -425,7 +484,7 @@
                             </div>
                         </li>
 
-                        <!-- WhatsApp Bait (no tiene página principal) -->
+                        <!-- WhatsApp Bait -->
                         <li>
                             <div class="social-item whatsapp">
                                 <span class="social-link-principal">💬 WhatsApp Bait<br>33 5145 7684</span>
@@ -434,7 +493,7 @@
                             </div>
                         </li>
 
-                        <!-- X (Twitter) -->
+                        <!-- X -->
                         <li>
                             <div class="social-item x">
                                 <a class="social-link-principal" href="https://x.com" target="_blank">🐦 X</a>
@@ -529,7 +588,7 @@
                             </div>
                         </li>
 
-                        <!-- Podcast (Spotify) -->
+                        <!-- Podcast -->
                         <li>
                             <div class="social-item spotify">
                                 <a class="social-link-principal" href="https://open.spotify.com" target="_blank">🎙️ Podcast</a>
