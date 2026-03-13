@@ -27,20 +27,18 @@
             margin: 0 auto;
         }
 
-        /* ESTILO PERFIL DE RED SOCIAL */
+        /* ===== ESTILO PERFIL (RED SOCIAL) ===== */
         .profile-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 30px 30px 20px 20px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        /* PORTADA - como Facebook/YouTube */
         .cover-photo {
             width: 100%;
-            height: 200px;
+            height: 180px;
             background: linear-gradient(45deg, #667eea, #764ba2);
-            position: relative;
         }
         .cover-photo img {
             width: 100%;
@@ -48,9 +46,8 @@
             object-fit: cover;
         }
 
-        /* SECCIÓN DE PERFIL - con foto superpuesta */
         .profile-header {
-            padding: 0 20px 20px;
+            padding: 0 25px 20px;
             position: relative;
             display: flex;
             align-items: flex-end;
@@ -58,16 +55,15 @@
             flex-wrap: wrap;
         }
 
-        /* FOTO DE PERFIL - circular como todas las redes */
         .profile-photo {
             margin-top: -50px;
             width: 120px;
             height: 120px;
             border-radius: 50%;
             border: 4px solid white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             overflow: hidden;
+            background: white;
         }
         .profile-photo img {
             width: 100%;
@@ -75,186 +71,238 @@
             object-fit: cover;
         }
 
-        /* INFORMACIÓN DEL PERFIL */
         .profile-info {
             flex: 1;
             padding-bottom: 5px;
         }
         .profile-info h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 5px;
             color: #333;
             cursor: pointer;
             display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
         }
         .profile-info h1:hover {
             opacity: 0.8;
         }
         .profile-bio {
             color: #666;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
         }
 
-        /* SECCIONES (Frc, Rds, Etm) - estilo pestañas */
+        /* ===== SECCIONES MEJORADAS (Frc, Rds, Etm) ===== */
         .sections {
-            padding: 0 20px;
+            padding: 0 25px;
             display: flex;
-            gap: 10px;
-            border-bottom: 1px solid #e0e0e0;
-            margin-top: 10px;
+            gap: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            margin-top: 5px;
         }
         .section-tab {
-            padding: 10px 20px;
-            font-weight: 600;
-            color: #666;
+            padding: 12px 0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #999;
             cursor: default;
             border-bottom: 3px solid transparent;
+            letter-spacing: 0.5px;
         }
         .section-tab.active {
             color: #667eea;
             border-bottom-color: #667eea;
         }
 
-        /* CONTENEDOR DE REDES SOCIALES */
+        /* ===== CONTENEDOR DE REDES (DISEÑO ANTERIOR MEJORADO) ===== */
         .social-container {
-            padding: 20px;
+            padding: 25px;
         }
 
-        /* TARJETAS DE REDES SOCIALES - estilo moderno */
-        .social-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+        .ventana-titulo {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: none; /* Oculto porque usamos pestañas */
         }
 
-        .social-card {
-            background: #f8f9fa;
-            border-radius: 12px;
+        .social-links {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .social-links li {
+            margin: 0;
+            border-radius: 16px;
             overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .social-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        /* ENCABEZADO DE LA TARJETA con nombre de red */
-        .social-header {
-            background: linear-gradient(135deg, #667eea10, #764ba210);
-            padding: 12px 15px;
-            border-bottom: 1px solid #e0e0e0;
+        .social-links li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
-        .social-name {
-            font-weight: 700;
-            font-size: 1rem;
+
+        .social-item {
+            display: flex;
+            width: 100%;
+            background-color: #f8f9fa;
+            border-left: 6px solid transparent;
+        }
+
+        .social-nombre {
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        /* BOTONES DE ACCIÓN */
-        .social-actions {
-            display: flex;
-            padding: 10px;
-            gap: 8px;
-            background: white;
-        }
-        .action-btn {
-            flex: 1;
-            padding: 10px;
+            justify-content: center;
+            background-color: #eaeef2;
+            padding: 16px 12px;
+            font-weight: 700;
+            min-width: 170px;
             text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            border: 1px solid transparent;
+            border-right: 2px solid #d0d9e0;
+            font-size: 0.95rem;
+            word-break: break-word;
+            line-height: 1.4;
         }
+
         .btn-misma {
-            background: #667eea;
-            color: white;
-        }
-        .btn-misma:hover {
-            background: #5a6fd5;
-            transform: scale(1.02);
-        }
-        .btn-nueva {
-            background: white;
+            flex: 1;
+            padding: 16px 12px;
+            text-decoration: none;
             color: #333;
-            border-color: #ddd;
-        }
-        .btn-nueva:hover {
-            background: #f5f5f5;
-            border-color: #667eea;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-align: center;
+            border-left: 1px solid #e0e0e0;
         }
 
-        /* COLORES ESPECÍFICOS PARA CADA RED */
-        .gmail .social-header { background: #EA433510; }
-        .youtube .social-header { background: #FF000010; }
-        .facebook .social-header { background: #1877F210; }
-        .whatsapp .social-header { background: #25D36610; }
-        .x .social-header { background: #00000010; }
-        .instagram .social-header { background: #E4405F10; }
-        .tiktok .social-header { background: #00000010; }
-        .telegram .social-header { background: #0088cc10; }
-        .threads .social-header { background: #00000010; }
-        .snapchat .social-header { background: #FFFC0010; }
-        .spotify .social-header { background: #1DB95410; }
-        .discord .social-header { background: #5865F210; }
-        .reddit .social-header { background: #FF450010; }
-        .linkedin .social-header { background: #0A66C210; }
-        .github .social-header { background: #33333310; }
+        .btn-nueva {
+            flex: 1;
+            padding: 16px 12px;
+            text-decoration: none;
+            color: #333;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-align: center;
+            border-left: 1px solid #e0e0e0;
+        }
 
-        /* BOTÓN RSS ESPECIAL */
-        .rss-card {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-            color: white;
+        .btn-misma:hover, .btn-nueva:hover {
+            background-color: #ffffff;
+            box-shadow: inset 0 0 0 2px rgba(102, 126, 234, 0.2);
         }
-        .rss-card .social-header {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border-bottom-color: rgba(255,255,255,0.3);
+
+        .btn-misma:hover {
+            background: linear-gradient(135deg, #667eea10, #764ba210);
         }
-        .rss-card .social-name {
-            color: white;
-        }
-        .rss-card .social-actions {
-            background: rgba(255,255,255,0.1);
-            padding: 15px;
-        }
+
+        /* Colores específicos para cada red social */
+        .gmail { border-left-color: #EA4335; }
+        .youtube { border-left-color: #FF0000; }
+        .facebook { border-left-color: #1877F2; }
+        .whatsapp { border-left-color: #25D366; }
+        .x { border-left-color: #000000; }
+        .instagram { border-left-color: #E4405F; }
+        .tiktok { border-left-color: #000000; }
+        .telegram { border-left-color: #0088cc; }
+        .threads { border-left-color: #000000; }
+        .snapchat { border-left-color: #FFFC00; }
+        .spotify { border-left-color: #1DB954; }
+        .discord { border-left-color: #5865F2; }
+        .reddit { border-left-color: #FF4500; }
+        .linkedin { border-left-color: #0A66C2; }
+        .github { border-left-color: #333; }
+
+        /* Botón RSS */
         .rss-button {
             width: 100%;
-            padding: 12px;
+            padding: 16px 20px;
             border: none;
-            border-radius: 8px;
-            background: white;
-            color: #f5576c;
-            font-weight: 700;
+            border-radius: 16px;
+            color: white;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             cursor: pointer;
-            transition: all 0.2s;
+            text-align: center;
+            font-weight: 700;
             font-size: 1rem;
-        }
-        .rss-button:hover {
-            transform: scale(1.02);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            margin: 5px 0;
         }
 
-        /* RESPONSIVE */
+        .rss-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
             .cover-photo {
                 height: 150px;
             }
             .profile-header {
-                padding: 0 15px 15px;
+                padding: 0 20px 15px;
                 gap: 15px;
             }
             .profile-photo {
                 width: 100px;
                 height: 100px;
                 margin-top: -40px;
+            }
+            .profile-info h1 {
+                font-size: 1.8rem;
+            }
+            .profile-bio {
+                font-size: 1.1rem;
+            }
+            .sections {
+                padding: 0 20px;
+            }
+            .section-tab {
+                font-size: 1rem;
+                padding: 10px 0;
+            }
+            .social-container {
+                padding: 20px;
+            }
+            .social-item {
+                flex-wrap: wrap;
+            }
+            .social-nombre {
+                width: 100%;
+                border-radius: 16px 16px 0 0;
+                border-right: none;
+                border-bottom: 2px solid #d0d9e0;
+                min-width: auto;
+            }
+            .btn-misma, .btn-nueva {
+                padding: 14px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .cover-photo {
+                height: 120px;
+            }
+            .profile-photo {
+                width: 80px;
+                height: 80px;
+                margin-top: -30px;
             }
             .profile-info h1 {
                 font-size: 1.5rem;
@@ -264,40 +312,21 @@
             }
             .sections {
                 padding: 0 15px;
-                overflow-x: auto;
             }
             .section-tab {
-                padding: 8px 15px;
                 font-size: 0.9rem;
-                white-space: nowrap;
+                padding: 8px 0;
             }
             .social-container {
                 padding: 15px;
             }
-        }
-
-        @media (max-width: 480px) {
-            .cover-photo {
-                height: 120px;
+            .social-nombre {
+                font-size: 0.85rem;
+                padding: 12px 8px;
             }
-            .profile-photo {
-                width: 80px;
-                height: 80px;
-                margin-top: -30px;
-            }
-            .profile-header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .profile-info h1 {
-                font-size: 1.3rem;
-            }
-            .profile-bio {
-                justify-content: center;
-            }
-            .social-actions {
-                flex-direction: column;
+            .btn-misma, .btn-nueva {
+                font-size: 0.85rem;
+                padding: 12px 8px;
             }
         }
 
@@ -307,18 +336,18 @@
                 max-width: 1000px;
             }
             .cover-photo {
-                height: 250px;
+                height: 220px;
             }
             .profile-photo {
-                width: 150px;
-                height: 150px;
+                width: 140px;
+                height: 140px;
                 margin-top: -60px;
             }
             .profile-info h1 {
                 font-size: 2.5rem;
             }
             .profile-bio {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -326,12 +355,11 @@
 <body>
     <div class="container">
         <div class="profile-card">
-            <!-- PORTADA -->
+            <!-- ===== PERFIL (ESTILO RED SOCIAL) ===== -->
             <div class="cover-photo">
                 <img src="portada.jpg" alt="Portada">
             </div>
 
-            <!-- PERFIL -->
             <div class="profile-header">
                 <div class="profile-photo">
                     <img src="perfil.jpg" alt="Perfil">
@@ -344,179 +372,190 @@
                 </div>
             </div>
 
-            <!-- SECCIONES (Frc, Rds, Etm) -->
+            <!-- ===== SECCIONES ===== -->
             <div class="sections">
                 <div class="section-tab active">Frc</div>
                 <div class="section-tab">Rds</div>
                 <div class="section-tab">Etm</div>
             </div>
 
-            <!-- CONTENIDO DE SECCIONES -->
+            <!-- ===== CONTENIDO DE SECCIONES (DISEÑO ANTERIOR MEJORADO) ===== -->
             <div class="social-container">
-                <!-- SECCIÓN Frc (LinkedIn) -->
-                <div class="social-grid" id="frc-section">
-                    <div class="social-card linkedin">
-                        <div class="social-header">
-                            <div class="social-name">🔗 LinkedIn</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://www.linkedin.com/in/yzk-rafa-bf-5a618b2b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://www.linkedin.com/in/yzk-rafa-bf-5a618b2b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                <!-- VENTANA Frc (LinkedIn) -->
+                <div style="margin-bottom: 30px;">
+                    <ul class="social-links">
+                        <li>
+                            <div class="social-item linkedin">
+                                <span class="social-nombre">🔗 LinkedIn</span>
+                                <a class="btn-misma" href="https://www.linkedin.com/in/yzk-rafa-bf-5a618b2b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://www.linkedin.com/in/yzk-rafa-bf-5a618b2b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- SECCIÓN Rds (Todas las redes) -->
-                <div class="social-grid" id="rds-section" style="margin-top: 20px;">
-                    <!-- Gmail -->
-                    <div class="social-card gmail">
-                        <div class="social-header">
-                            <div class="social-name">📧 Gmail</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="mailto:yzkrafabf@gmail.com">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="mailto:yzkrafabf@gmail.com" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                <!-- VENTANA Rds (Todas las redes) -->
+                <div style="margin-bottom: 30px;">
+                    <ul class="social-links">
+                        <!-- Gmail -->
+                        <li>
+                            <div class="social-item gmail">
+                                <span class="social-nombre">📧 Gmail</span>
+                                <a class="btn-misma" href="mailto:yzkrafabf@gmail.com">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="mailto:yzkrafabf@gmail.com" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- Facebook -->
-                    <div class="social-card facebook">
-                        <div class="social-header">
-                            <div class="social-name">📘 Facebook</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- Facebook -->
+                        <li>
+                            <div class="social-item facebook">
+                                <span class="social-nombre">📘 Facebook</span>
+                                <a class="btn-misma" href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- WhatsApp Unefon -->
-                    <div class="social-card whatsapp">
-                        <div class="social-header">
-                            <div class="social-name">💬 WhatsApp Unefon · 55 1644 7433</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://wa.me/525516447433">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://wa.me/525516447433" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- WhatsApp Unefon -->
+                        <li>
+                            <div class="social-item whatsapp">
+                                <span class="social-nombre">💬 WhatsApp Unefon<br>55 1644 7433</span>
+                                <a class="btn-misma" href="https://wa.me/525516447433">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://wa.me/525516447433" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- WhatsApp Bait -->
-                    <div class="social-card whatsapp">
-                        <div class="social-header">
-                            <div class="social-name">💬 WhatsApp Bait · 33 5145 7684</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://wa.me/523351457684">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://wa.me/523351457684" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- WhatsApp Bait -->
+                        <li>
+                            <div class="social-item whatsapp">
+                                <span class="social-nombre">💬 WhatsApp Bait<br>33 5145 7684</span>
+                                <a class="btn-misma" href="https://wa.me/523351457684">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://wa.me/523351457684" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- X -->
-                    <div class="social-card x">
-                        <div class="social-header">
-                            <div class="social-name">🐦 X</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://x.com/yzkrafabf?s=09">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://x.com/yzkrafabf?s=09" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- X -->
+                        <li>
+                            <div class="social-item x">
+                                <span class="social-nombre">🐦 X</span>
+                                <a class="btn-misma" href="https://x.com/yzkrafabf?s=09">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://x.com/yzkrafabf?s=09" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- Instagram -->
-                    <div class="social-card instagram">
-                        <div class="social-header">
-                            <div class="social-name">📷 Instagram</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- Instagram -->
+                        <li>
+                            <div class="social-item instagram">
+                                <span class="social-nombre">📷 Instagram</span>
+                                <a class="btn-misma" href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- TikTok -->
-                    <div class="social-card tiktok">
-                        <div class="social-header">
-                            <div class="social-name">🎵 TikTok</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://www.tiktok.com/@yzkrafabf?_r=1&_t=ZS-94fBUDz0jTT">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://www.tiktok.com/@yzkrafabf?_r=1&_t=ZS-94fBUDz0jTT" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- TikTok -->
+                        <li>
+                            <div class="social-item tiktok">
+                                <span class="social-nombre">🎵 TikTok</span>
+                                <a class="btn-misma" href="https://www.tiktok.com/@yzkrafabf?_r=1&_t=ZS-94fBUDz0jTT">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://www.tiktok.com/@yzkrafabf?_r=1&_t=ZS-94fBUDz0jTT" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- Telegram -->
-                    <div class="social-card telegram">
-                        <div class="social-header">
-                            <div class="social-name">✈️ Telegram</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://t.me/yzkrafabf">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://t.me/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- Telegram -->
+                        <li>
+                            <div class="social-item telegram">
+                                <span class="social-nombre">✈️ Telegram</span>
+                                <a class="btn-misma" href="https://t.me/yzkrafabf">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://t.me/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- Threads -->
-                    <div class="social-card threads">
-                        <div class="social-header">
-                            <div class="social-name">🧵 Threads</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://www.threads.net/@yzkrafabf?invite=4">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://www.threads.net/@yzkrafabf?invite=4" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- Threads -->
+                        <li>
+                            <div class="social-item threads">
+                                <span class="social-nombre">🧵 Threads</span>
+                                <a class="btn-misma" href="https://www.threads.net/@yzkrafabf?invite=4">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://www.threads.net/@yzkrafabf?invite=4" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- Snapchat -->
-                    <div class="social-card snapchat">
-                        <div class="social-header">
-                            <div class="social-name">👻 Snapchat</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- Snapchat -->
+                        <li>
+                            <div class="social-item snapchat">
+                                <span class="social-nombre">👻 Snapchat</span>
+                                <a class="btn-misma" href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- Discord -->
-                    <div class="social-card discord">
-                        <div class="social-header">
-                            <div class="social-name">💬 Discord</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://discord.gg/4sUrSpNJ">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://discord.gg/4sUrSpNJ" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- Discord -->
+                        <li>
+                            <div class="social-item discord">
+                                <span class="social-nombre">💬 Discord</span>
+                                <a class="btn-misma" href="https://discord.gg/4sUrSpNJ">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://discord.gg/4sUrSpNJ" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- Reddit -->
-                    <div class="social-card reddit">
-                        <div class="social-header">
-                            <div class="social-name">👽 Reddit</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://www.reddit.com/u/yzkrafab?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=1">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://www.reddit.com/u/yzkrafab?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=1" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- Reddit -->
+                        <li>
+                            <div class="social-item reddit">
+                                <span class="social-nombre">👽 Reddit</span>
+                                <a class="btn-misma" href="https://www.reddit.com/u/yzkrafab?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=1">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://www.reddit.com/u/yzkrafab?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=1" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
 
-                    <!-- GitHub -->
-                    <div class="social-card github">
-                        <div class="social-header">
-                            <div class="social-name">🐙 GitHub</div>
-                        </div>
-                        <div class="social-actions">
-                            <a class="action-btn btn-misma" href="https://github.com/yzkrafabf">📌 Misma pestaña</a>
-                            <a class="action-btn btn-nueva" href="https://github.com/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
-                        </div>
-                    </div>
+                        <!-- GitHub -->
+                        <li>
+                            <div class="social-item github">
+                                <span class="social-nombre">🐙 GitHub</span>
+                                <a class="btn-misma" href="https://github.com/yzkrafabf">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://github.com/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- SECCIÓN Etm (YouTube, Podcast, RSS) -->
-                <div class="social-grid" id="etm-section" style="margin-top: 20px;">
-                    <!-- YouTube -->
-                    <div class="social-card youtube">
-                        <div class="social-header">
-                            <div class="social-name">▶️ YouTube</div>
-                        </div>
-                      
+                <!-- VENTANA Etm (YouTube, Podcast y RSS) -->
+                <div style="margin-bottom: 30px;">
+                    <ul class="social-links">
+                        <!-- YouTube -->
+                        <li>
+                            <div class="social-item youtube">
+                                <span class="social-nombre">▶️ YouTube</span>
+                                <a class="btn-misma" href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
+
+                        <!-- Podcast -->
+                        <li>
+                            <div class="social-item spotify">
+                                <span class="social-nombre">🎙️ Podcast</span>
+                                <a class="btn-misma" href="https://podcasters.spotify.com/pod/show/yzkrafabf">📌 Misma pestaña</a>
+                                <a class="btn-nueva" href="https://podcasters.spotify.com/pod/show/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
+                            </div>
+                        </li>
+
+                        <!-- RSS Button -->
+                        <li>
+                            <button class="rss-button" onclick="copyToClipboard('https://anchor.fm/s/f30bbeb0/podcast/rss')">📋 Copiar RSS al Portapapeles</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('¡Enlace RSS copiado al portapapeles!');
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+                alert('No se pudo copiar. Intenta manualmente.');
+            });
+        }
+    </script>
+</body>
+</html>
