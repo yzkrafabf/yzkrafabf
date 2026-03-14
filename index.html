@@ -57,7 +57,7 @@
             cursor:pointer;
         }
         .profile-photo:hover{
-            transform:scale(1.03) rotate(2deg);
+            transform:scale(1.03);
             box-shadow:0 20px 35px -5px #ef4444;
         }
         .profile-photo img{width:100%;height:100%;object-fit:cover;}
@@ -158,25 +158,11 @@
             font-size:.95rem;
             text-align:center;
             border-left:1px solid #eef2f6;
-            position:relative;
-            overflow:hidden;
         }
-        .btn-misma::before,.btn-nueva::before{
-            content:'';
-            position:absolute;
-            top:0;
-            left:-100%;
-            width:100%;
-            height:100%;
-            background:linear-gradient(90deg,transparent,#ef44441a,transparent);
-            transition:left .5s;
-        }
-        .btn-misma:hover::before,.btn-nueva:hover::before{left:100%;}
         .btn-misma:hover,.btn-nueva:hover{background:#fee2e2;}
         .btn-misma:hover{color:#dc2626;}
         .btn-nueva:hover{color:#b91c1c;}
         
-        /* Bordes de colores */
         [class*="gmail"] .social-link-principal,[class*="gmail"]>span:first-child{border-left:4px solid #EA4335;}
         [class*="youtube"] .social-link-principal,[class*="youtube"]>span:first-child{border-left:4px solid #FF0000;}
         [class*="facebook"] .social-link-principal,[class*="facebook"]>span:first-child{border-left:4px solid #1877F2;}
@@ -208,47 +194,36 @@
         }
         .rss-button:hover{
             transform:scale(1.02);
-            box-shadow:0 20px 30px -8px #b91c1c;
             background:#dc2626;
         }
         
-        /* ===== BOTONES CENTRADOS ===== */
         .nav-buttons{
             position:fixed;
             bottom:30px;
             left:50%;
             transform:translateX(-50%);
             display:flex;
-            gap:20px;
+            gap:10px;
             z-index:1000;
-            background:rgba(255,255,255,0.9);
-            padding:10px 20px;
-            border-radius:60px;
+            background:rgba(255,255,255,0.95);
+            padding:8px 16px;
+            border-radius:50px;
             box-shadow:0 10px 30px rgba(0,0,0,0.2);
             backdrop-filter:blur(10px);
-            border:1px solid rgba(255,255,255,0.3);
         }
         .nav-btn{
-            padding:12px 24px;
+            padding:10px 16px;
             border:none;
-            border-radius:40px;
+            border-radius:30px;
             background:#2563eb;
             color:white;
-            font-weight:700;
-            font-size:1rem;
+            font-weight:600;
+            font-size:.9rem;
             cursor:pointer;
-            transition:all 0.3s ease;
-            box-shadow:0 4px 15px rgba(37,99,235,0.4);
-            letter-spacing:0.5px;
-            min-width:90px;
+            transition:.2s;
+            min-width:60px;
         }
-        .nav-btn:hover{
-            background:#ef4444;
-            transform:scale(1.05);
-            box-shadow:0 6px 20px rgba(239,68,68,0.5);
-        }
-        .nav-btn.up{background:#2563eb;}
-        .nav-btn.down{background:#2563eb;}
+        .nav-btn:hover{background:#ef4444;}
 
         @media (max-width:700px){
             .social-item{flex-wrap:wrap;}
@@ -261,8 +236,8 @@
                 padding:16px;
             }
             .btn-misma,.btn-nueva{padding:16px 10px;font-size:.9rem;}
-            .nav-buttons{gap:15px;padding:8px 15px;}
-            .nav-btn{padding:10px 20px;font-size:.9rem;min-width:80px;}
+            .nav-buttons{gap:5px;padding:6px 12px;}
+            .nav-btn{padding:8px 12px;font-size:.8rem;min-width:50px;}
         }
         @media (max-width:520px){
             .cover-photo{height:140px;}
@@ -274,16 +249,7 @@
             .section-tab{font-size:1rem;padding:12px 0;}
             .social-container{padding:20px;}
             .btn-misma,.btn-nueva{font-size:.85rem;padding:14px 8px;}
-            .nav-buttons{bottom:20px;gap:10px;padding:6px 12px;}
-            .nav-btn{padding:8px 16px;font-size:.85rem;min-width:70px;}
-        }
-        @media (min-width:1400px){
-            .container{max-width:1000px;}
-            .cover-photo{height:220px;}
-            .profile-photo{width:150px;height:150px;margin-top:-70px;}
-            .profile-info h1{font-size:3rem;}
-            .profile-bio{font-size:1.5rem;}
-            .nav-btn{padding:14px 28px;font-size:1.1rem;min-width:100px;}
+            .nav-buttons{bottom:20px;}
         }
     </style>
 </head>
@@ -304,7 +270,6 @@
                 <div class="section-tab" onclick="showSection('etm')">Etm</div>
             </div>
             <div class="social-container">
-                <!-- Frc -->
                 <div id="frc" class="section-content active">
                     <ul class="social-links"><li><div class="social-item linkedin">
                         <a class="social-link-principal" href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
@@ -312,7 +277,6 @@
                         <a class="btn-nueva" href="https://linkedin.com/in/yzk-rafa-bf-5a618b2b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">🔗 Nueva pestaña</a>
                     </div></li></ul>
                 </div>
-                <!-- Rds -->
                 <div id="rds" class="section-content">
                     <ul class="social-links">
                         <li><div class="social-item gmail"><span class="social-link-principal">📧 Gmail</span><a class="btn-misma" href="mailto:yzkrafabf@gmail.com">📌 Misma pestaña</a><a class="btn-nueva" href="mailto:yzkrafabf@gmail.com" target="_blank">🔗 Nueva pestaña</a></div></li>
@@ -330,7 +294,6 @@
                         <li><div class="social-item github"><a class="social-link-principal" href="https://github.com" target="_blank">🐙 GitHub</a><a class="btn-misma" href="https://github.com/yzkrafabf">📌 Misma pestaña</a><a class="btn-nueva" href="https://github.com/yzkrafabf" target="_blank">🔗 Nueva pestaña</a></div></li>
                     </ul>
                 </div>
-                <!-- Etm -->
                 <div id="etm" class="section-content">
                     <ul class="social-links">
                         <li><div class="social-item youtube"><a class="social-link-principal" href="https://youtube.com" target="_blank">▶️ YouTube</a><a class="btn-misma" href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe">📌 Misma pestaña</a><a class="btn-nueva" href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe" target="_blank">🔗 Nueva pestaña</a></div></li>
@@ -342,10 +305,12 @@
         </div>
     </div>
     
-    <!-- BOTONES SUBIR/BAJAR CENTRADOS -->
+    <!-- 4 BOTONES DE NAVEGACIÓN -->
     <div class="nav-buttons">
-        <button class="nav-btn up" onclick="window.scrollTo({top:0,behavior:'smooth'})">SUBIR</button>
-        <button class="nav-btn down" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">BAJAR</button>
+        <button class="nav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">ARRIBA</button>
+        <button class="nav-btn" onclick="window.scrollBy({top:-200,behavior:'smooth'})">SUBIR</button>
+        <button class="nav-btn" onclick="window.scrollBy({top:200,behavior:'smooth'})">BAJAR</button>
+        <button class="nav-btn" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">ABAJO</button>
     </div>
 
     <script>
