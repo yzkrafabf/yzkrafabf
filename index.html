@@ -77,10 +77,11 @@
             background: white;
             transition: all 0.4s ease;
             z-index: 5;
+            cursor: pointer; /* AÑADIDO */
         }
         .profile-photo:hover {
             transform: scale(1.03) rotate(2deg);
-            box-shadow: 0 20px 35px -5px #ef4444; /* ROJO */
+            box-shadow: 0 20px 35px -5px #ef4444;
         }
         .profile-photo img {
             width: 100%;
@@ -102,7 +103,7 @@
             letter-spacing: -0.03em;
         }
         .profile-info h1:hover {
-            color: #ef4444; /* ROJO */
+            color: #ef4444;
         }
         .profile-bio {
             color: #2563eb;
@@ -138,11 +139,11 @@
             transition: all 0.2s ease;
         }
         .section-tab.active {
-            color: #ef4444; /* ROJO */
-            border-bottom-color: #ef4444; /* ROJO */
+            color: #ef4444;
+            border-bottom-color: #ef4444;
         }
         .section-tab:hover {
-            color: #ef4444; /* ROJO */
+            color: #ef4444;
         }
 
         /* ===== CONTENEDOR DE REDES ===== */
@@ -174,8 +175,8 @@
         }
 
         .social-links li:hover {
-            border-color: #ef4444; /* ROJO */
-            box-shadow: 0 15px 30px -12px #ef4444; /* ROJO */
+            border-color: #ef4444;
+            box-shadow: 0 15px 30px -12px #ef4444;
         }
 
         .social-item {
@@ -207,8 +208,8 @@
             text-decoration: none;
         }
         .social-link-principal:hover {
-            background: #fee2e2; /* ROJO claro */
-            color: #dc2626; /* ROJO oscuro */
+            background: #fee2e2;
+            color: #dc2626;
         }
 
         .btn-misma,
@@ -235,7 +236,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.1), transparent); /* ROJO */
+            background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -245,16 +246,16 @@
         }
 
         .btn-misma:hover {
-            background: #fee2e2; /* ROJO claro */
-            color: #dc2626; /* ROJO oscuro */
+            background: #fee2e2;
+            color: #dc2626;
         }
 
         .btn-nueva:hover {
-            background: #fee2e2; /* ROJO claro */
-            color: #b91c1c; /* ROJO más oscuro */
+            background: #fee2e2;
+            color: #b91c1c;
         }
 
-        /* Colores específicos (bordes) - SE MANTIENEN */
+        /* Colores específicos (bordes) */
         .gmail .social-link-principal,
         .gmail > span:first-child { border-left: 4px solid #EA4335; }
         .youtube .social-link-principal,
@@ -292,7 +293,7 @@
             border: none;
             border-radius: 28px;
             color: white;
-            background: #ef4444; /* ROJO */
+            background: #ef4444;
             cursor: pointer;
             text-align: center;
             font-weight: 700;
@@ -306,7 +307,7 @@
         .rss-button:hover {
             transform: scale(1.02);
             box-shadow: 0 20px 30px -8px #b91c1c;
-            background: #dc2626; /* ROJO más oscuro */
+            background: #dc2626;
         }
 
         @media (max-width: 700px) {
@@ -399,7 +400,8 @@
             </div>
 
             <div class="profile-header">
-                <div class="profile-photo">
+                <!-- FOTO DE PERFIL CON CLICK PARA RECARGAR -->
+                <div class="profile-photo" onclick="location.reload()">
                     <img src="perfil.jpg" alt="Perfil">
                 </div>
                 <div class="profile-info">
