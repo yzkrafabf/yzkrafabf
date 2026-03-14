@@ -20,6 +20,7 @@
             align-items: center;
             justify-content: center;
             padding: 16px;
+            position: relative;
         }
 
         .container {
@@ -77,7 +78,7 @@
             background: white;
             transition: all 0.4s ease;
             z-index: 5;
-            cursor: pointer; /* AÑADIDO */
+            cursor: pointer;
         }
         .profile-photo:hover {
             transform: scale(1.03) rotate(2deg);
@@ -310,6 +311,72 @@
             background: #dc2626;
         }
 
+        /* ===== BOTONES SUBIR/BAJAR ===== */
+        .nav-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: #ef4444;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+        }
+
+        .nav-btn.top {
+            background: #2563eb;
+        }
+
+        .nav-btn.bottom {
+            background: #2563eb;
+        }
+
+        /* Tooltip para los botones */
+        .nav-btn {
+            position: relative;
+        }
+
+        .nav-btn::after {
+            content: attr(title);
+            position: absolute;
+            right: 60px;
+            background: #1e293b;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-btn:hover::after {
+            opacity: 1;
+        }
+
         @media (max-width: 700px) {
             .social-item {
                 flex-wrap: wrap;
@@ -327,6 +394,11 @@
             .btn-nueva {
                 padding: 16px 10px;
                 font-size: 0.9rem;
+            }
+            .nav-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
             }
         }
 
@@ -368,6 +440,15 @@
                 font-size: 0.85rem;
                 padding: 14px 8px;
             }
+            .nav-buttons {
+                right: 10px;
+                bottom: 10px;
+            }
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
         }
 
         @media (min-width: 1400px) {
@@ -388,6 +469,11 @@
             .profile-bio {
                 font-size: 1.5rem;
             }
+            .nav-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -400,7 +486,6 @@
             </div>
 
             <div class="profile-header">
-                <!-- FOTO DE PERFIL CON CLICK PARA RECARGAR -->
                 <div class="profile-photo" onclick="location.reload()">
                     <img src="perfil.jpg" alt="Perfil">
                 </div>
@@ -555,6 +640,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- BOTONES SUBIR/BAJAR -->
+    <div class="nav-buttons">
+        <button class="nav-btn top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Subir al inicio">⬆️</button>
+        <button class="nav-btn bottom" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})" title="Bajar al final">⬇️</button>
     </div>
 
     <script>
