@@ -12,44 +12,14 @@
             box-sizing: border-box;
         }
 
-        /* ===== TEMA CLARO/OSCURO - SOLO FONDOS, TEXTOS AZULES FIJOS ===== */
-        :root {
-            --bg-body: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
-            --bg-card: #ffffff;
-            --border-color: #eef2f6;
-            --bg-soft: #f1f5f9;
-            --bg-soft-hover: #eef2ff;
-            --btn-bg: white;
-            --btn-border: #edf2f7;
-            --shadow-color: rgba(0, 0, 0, 0.5);
-            --text-azul: #2563eb; /* AZUL FIJO */
-            --text-azul-claro: #3b82f6;
-            --text-azul-oscuro: #1d4ed8;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-body: linear-gradient(145deg, #020617 0%, #0f172a 100%);
-                --bg-card: #1e293b;
-                --border-color: #334155;
-                --bg-soft: #334155;
-                --bg-soft-hover: #475569;
-                --btn-bg: #1e293b;
-                --btn-border: #475569;
-                --shadow-color: rgba(0, 0, 0, 0.8);
-                /* LOS TEXTOS SIGUEN SIENDO AZULES */
-            }
-        }
-
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--bg-body);
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 16px;
-            transition: background 0.3s ease;
         }
 
         .container {
@@ -59,17 +29,16 @@
         }
 
         .profile-card {
-            background: var(--bg-card);
+            background: #ffffff;
             border-radius: 48px 48px 32px 32px;
             overflow: hidden;
-            box-shadow: 0 30px 60px -15px var(--shadow-color);
-            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
         }
 
         .cover-photo {
             width: 100%;
             height: 170px;
-            background: linear-gradient(145deg, #2563eb, #1e40af);
+            background: linear-gradient(145deg, #2563eb, #1d4ed8);
             position: relative;
             overflow: hidden;
         }
@@ -102,16 +71,16 @@
             width: 116px;
             height: 116px;
             border-radius: 50%;
-            border: 4px solid var(--bg-card);
+            border: 4px solid white;
             box-shadow: 0 15px 30px -8px #2563eb;
             overflow: hidden;
-            background: var(--bg-card);
+            background: white;
             transition: all 0.4s ease;
             z-index: 5;
         }
         .profile-photo:hover {
             transform: scale(1.03) rotate(2deg);
-            box-shadow: 0 20px 35px -5px #3b82f6;
+            box-shadow: 0 20px 35px -5px #ef4444; /* ROJO */
         }
         .profile-photo img {
             width: 100%;
@@ -127,33 +96,33 @@
             font-size: 2.3rem;
             font-weight: 800;
             margin-bottom: 4px;
-            color: #2563eb; /* AZUL FIJO */
+            color: #2563eb;
             cursor: pointer;
             display: inline-block;
             letter-spacing: -0.03em;
         }
         .profile-info h1:hover {
-            opacity: 0.8;
+            color: #ef4444; /* ROJO */
         }
         .profile-bio {
-            color: #3b82f6; /* AZUL CLARO FIJO */
+            color: #2563eb;
             font-size: 1.3rem;
             display: flex;
             align-items: center;
             gap: 8px;
-            background: var(--bg-soft);
+            background: #f1f5f9;
             padding: 6px 18px;
             border-radius: 40px;
             width: fit-content;
             font-weight: 500;
         }
 
-        /* ===== PESTAÑAS CENTRADAS - SIN MAYÚSCULAS ===== */
+        /* ===== PESTAÑAS CENTRADAS ===== */
         .sections {
             padding: 0 28px;
             display: flex;
             gap: 32px;
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 2px solid #eef2f6;
             margin-top: 10px;
             justify-content: center;
         }
@@ -161,7 +130,7 @@
             padding: 14px 0;
             font-weight: 600;
             font-size: 1.1rem;
-            color: #3b82f6; /* AZUL CLARO FIJO */
+            color: #2563eb;
             cursor: pointer;
             border-bottom: 3px solid transparent;
             text-transform: none;
@@ -169,11 +138,11 @@
             transition: all 0.2s ease;
         }
         .section-tab.active {
-            color: #1d4ed8; /* AZUL MÁS OSCURO */
-            border-bottom-color: #2563eb;
+            color: #ef4444; /* ROJO */
+            border-bottom-color: #ef4444; /* ROJO */
         }
         .section-tab:hover {
-            color: #1e40af; /* AZUL MUY OSCURO */
+            color: #ef4444; /* ROJO */
         }
 
         /* ===== CONTENEDOR DE REDES ===== */
@@ -200,19 +169,19 @@
             border-radius: 28px;
             overflow: hidden;
             transition: all 0.3s ease;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            background: white;
+            border: 1px solid #eef2f6;
         }
 
         .social-links li:hover {
-            border-color: #2563eb;
-            box-shadow: 0 15px 30px -12px #2563eb;
+            border-color: #ef4444; /* ROJO */
+            box-shadow: 0 15px 30px -12px #ef4444; /* ROJO */
         }
 
         .social-item {
             display: flex;
             width: 100%;
-            background: var(--bg-card);
+            background: white;
             align-items: stretch;
         }
 
@@ -221,26 +190,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--bg-soft);
+            background: #f8fafc;
             padding: 18px 14px;
             font-weight: 700;
             min-width: 170px;
             text-align: center;
             font-size: 0.95rem;
             line-height: 1.4;
-            color: #2563eb; /* AZUL FIJO */
-            border-right: 2px solid var(--border-color);
+            color: #2563eb;
+            border-right: 2px solid #eef2f6;
             transition: all 0.2s ease;
             word-break: break-word;
         }
 
         .social-link-principal {
             text-decoration: none;
-            background: var(--bg-soft);
         }
         .social-link-principal:hover {
-            background: var(--bg-soft-hover);
-            color: #1e40af; /* AZUL MÁS OSCURO */
+            background: #fee2e2; /* ROJO claro */
+            color: #dc2626; /* ROJO oscuro */
         }
 
         .btn-misma,
@@ -248,13 +216,13 @@
             flex: 1;
             padding: 18px 12px;
             text-decoration: none;
-            color: #3b82f6; /* AZUL CLARO FIJO */
-            background: var(--btn-bg);
+            color: #2563eb;
+            background: white;
             transition: all 0.25s ease;
             font-weight: 600;
             font-size: 0.95rem;
             text-align: center;
-            border-left: 1px solid var(--btn-border);
+            border-left: 1px solid #eef2f6;
             position: relative;
             overflow: hidden;
         }
@@ -267,7 +235,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.1), transparent); /* ROJO */
             transition: left 0.5s ease;
         }
 
@@ -277,16 +245,16 @@
         }
 
         .btn-misma:hover {
-            background: #dbeafe;
-            color: #1d4ed8;
+            background: #fee2e2; /* ROJO claro */
+            color: #dc2626; /* ROJO oscuro */
         }
 
         .btn-nueva:hover {
-            background: #dbeafe;
-            color: #1e40af;
+            background: #fee2e2; /* ROJO claro */
+            color: #b91c1c; /* ROJO más oscuro */
         }
 
-        /* Colores específicos (bordes) */
+        /* Colores específicos (bordes) - SE MANTIENEN */
         .gmail .social-link-principal,
         .gmail > span:first-child { border-left: 4px solid #EA4335; }
         .youtube .social-link-principal,
@@ -324,21 +292,21 @@
             border: none;
             border-radius: 28px;
             color: white;
-            background: linear-gradient(145deg, #2563eb, #1d4ed8);
+            background: #ef4444; /* ROJO */
             cursor: pointer;
             text-align: center;
             font-weight: 700;
             font-size: 1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px -5px #2563eb;
+            box-shadow: 0 10px 25px -5px #ef4444;
             letter-spacing: 0.3px;
             margin: 4px 0;
         }
 
         .rss-button:hover {
             transform: scale(1.02);
-            box-shadow: 0 20px 30px -8px #1e40af;
-            background: linear-gradient(145deg, #3b82f6, #2563eb);
+            box-shadow: 0 20px 30px -8px #b91c1c;
+            background: #dc2626; /* ROJO más oscuro */
         }
 
         @media (max-width: 700px) {
@@ -350,7 +318,7 @@
                 width: 100%;
                 border-radius: 28px 28px 0 0;
                 border-right: none;
-                border-bottom: 2px solid var(--border-color);
+                border-bottom: 2px solid #eef2f6;
                 min-width: auto;
                 padding: 16px;
             }
@@ -442,7 +410,7 @@
                 </div>
             </div>
 
-            <!-- PESTAÑAS CENTRADAS -->
+            <!-- PESTAÑAS -->
             <div class="sections">
                 <div class="section-tab active" onclick="showSection('frc')">Frc</div>
                 <div class="section-tab" onclick="showSection('rds')">Rds</div>
@@ -451,7 +419,7 @@
 
             <!-- CONTENIDO -->
             <div class="social-container">
-                <!-- SECCIÓN Frc -->
+                <!-- Frc -->
                 <div id="frc" class="section-content active">
                     <ul class="social-links">
                         <li>
@@ -464,10 +432,9 @@
                     </ul>
                 </div>
 
-                <!-- SECCIÓN Rds -->
+                <!-- Rds -->
                 <div id="rds" class="section-content">
                     <ul class="social-links">
-                        <!-- Gmail -->
                         <li>
                             <div class="social-item gmail">
                                 <span class="social-link-principal">📧 Gmail</span>
@@ -475,7 +442,6 @@
                                 <a class="btn-nueva" href="mailto:yzkrafabf@gmail.com" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- Facebook -->
                         <li>
                             <div class="social-item facebook">
                                 <a class="social-link-principal" href="https://www.facebook.com" target="_blank">📘 Facebook</a>
@@ -483,7 +449,6 @@
                                 <a class="btn-nueva" href="https://www.facebook.com/yzkrafabf?mibextid=ZbWKwL" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- WhatsApp Unefon -->
                         <li>
                             <div class="social-item whatsapp">
                                 <span class="social-link-principal">💬 WhatsApp Unefon<br>55 1644 7433</span>
@@ -491,7 +456,6 @@
                                 <a class="btn-nueva" href="https://wa.me/525516447433" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- WhatsApp Bait -->
                         <li>
                             <div class="social-item whatsapp">
                                 <span class="social-link-principal">💬 WhatsApp Bait<br>33 5145 7684</span>
@@ -499,7 +463,6 @@
                                 <a class="btn-nueva" href="https://wa.me/523351457684" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- X -->
                         <li>
                             <div class="social-item x">
                                 <a class="social-link-principal" href="https://x.com" target="_blank">🐦 X</a>
@@ -507,7 +470,6 @@
                                 <a class="btn-nueva" href="https://x.com/yzkrafabf?s=09" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- Instagram -->
                         <li>
                             <div class="social-item instagram">
                                 <a class="social-link-principal" href="https://www.instagram.com" target="_blank">📷 Instagram</a>
@@ -515,7 +477,6 @@
                                 <a class="btn-nueva" href="https://www.instagram.com/yzkrafabf/profilecard/?igsh=MXFzMmpxNDZtcjF6Nw==" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- TikTok -->
                         <li>
                             <div class="social-item tiktok">
                                 <a class="social-link-principal" href="https://www.tiktok.com" target="_blank">🎵 TikTok</a>
@@ -523,7 +484,6 @@
                                 <a class="btn-nueva" href="https://www.tiktok.com/@yzkrafabf?_r=1&_t=ZS-94fBUDz0jTT" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- Telegram -->
                         <li>
                             <div class="social-item telegram">
                                 <a class="social-link-principal" href="https://telegram.org" target="_blank">✈️ Telegram</a>
@@ -531,7 +491,6 @@
                                 <a class="btn-nueva" href="https://t.me/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- Threads -->
                         <li>
                             <div class="social-item threads">
                                 <a class="social-link-principal" href="https://www.threads.net" target="_blank">🧵 Threads</a>
@@ -539,7 +498,6 @@
                                 <a class="btn-nueva" href="https://www.threads.net/@yzkrafabf?invite=4" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- Snapchat -->
                         <li>
                             <div class="social-item snapchat">
                                 <a class="social-link-principal" href="https://www.snapchat.com" target="_blank">👻 Snapchat</a>
@@ -547,7 +505,6 @@
                                 <a class="btn-nueva" href="https://www.snapchat.com/add/yzkrafab?share_id=xMeywfi-HqA&locale=es-MX" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- Discord -->
                         <li>
                             <div class="social-item discord">
                                 <a class="social-link-principal" href="https://discord.com" target="_blank">💬 Discord</a>
@@ -555,7 +512,6 @@
                                 <a class="btn-nueva" href="https://discord.gg/4sUrSpNJ" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- Reddit -->
                         <li>
                             <div class="social-item reddit">
                                 <a class="social-link-principal" href="https://www.reddit.com" target="_blank">👽 Reddit</a>
@@ -563,7 +519,6 @@
                                 <a class="btn-nueva" href="https://www.reddit.com/u/yzkrafab?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=1" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- GitHub -->
                         <li>
                             <div class="social-item github">
                                 <a class="social-link-principal" href="https://github.com" target="_blank">🐙 GitHub</a>
@@ -574,10 +529,9 @@
                     </ul>
                 </div>
 
-                <!-- SECCIÓN Etm -->
+                <!-- Etm -->
                 <div id="etm" class="section-content">
                     <ul class="social-links">
-                        <!-- YouTube -->
                         <li>
                             <div class="social-item youtube">
                                 <a class="social-link-principal" href="https://youtube.com" target="_blank">▶️ YouTube</a>
@@ -585,7 +539,6 @@
                                 <a class="btn-nueva" href="https://youtube.com/@yzkrafabf?si=wSs9QWK5E2_OnJBe" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- Podcast -->
                         <li>
                             <div class="social-item spotify">
                                 <a class="social-link-principal" href="https://open.spotify.com" target="_blank">🎙️ Podcast</a>
@@ -593,7 +546,6 @@
                                 <a class="btn-nueva" href="https://podcasters.spotify.com/pod/show/yzkrafabf" target="_blank">🔗 Nueva pestaña</a>
                             </div>
                         </li>
-                        <!-- RSS -->
                         <li>
                             <button class="rss-button" onclick="copyToClipboard('https://anchor.fm/s/f30bbeb0/podcast/rss')">📋 Copiar RSS al Portapapeles</button>
                         </li>
